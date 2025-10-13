@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-slate-900 to-cyan-900 text-white">
+
+  <div class="text-center space-y-8">
+    <!-- Title -->
+    <div>
+      <h1 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+        AI Resume Analyzer
+      </h1>
+      <p class="text-gray-300">Upload your PDF resume and get instant AI feedback</p>
+    </div>
+
+    <!-- Upload Card -->
+    <div class="bg-slate-800/60 border border-slate-700 backdrop-blur-md rounded-2xl shadow-2xl p-10 w-[380px] mx-auto transition hover:shadow-cyan-500/20">
+      <form action="/resume" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-6">
+        
+        <!-- Icon -->
+        <div class="bg-slate-700 p-6 rounded-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+
+        <p class="text-gray-300">Upload Your Resume (PDF only)</p>
+        
+        <!-- File Upload Button -->
+        <label class="cursor-pointer bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition">
+          Choose PDF File
+          <input type="file" name="resume" accept="application/pdf" class="hidden" />
+        </label>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

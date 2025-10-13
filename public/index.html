@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillStack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+
+<body class="text-gray-100 font-sans min-h-screen flex flex-col">
+
+  <nav class="flex justify-between items-center p-6">
+    <div class="text-xl font-semibold tracking-wide">SkillStack</div>
+    <div class="hidden md:flex space-x-6 text-sm">
+      <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+      <a href="/notes" class="hover:text-indigo-400 transition">Notes</a>
+      <a href="/resume" class="hover:text-indigo-400 transition">Resume Analysis</a>
+      <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+    </div>
+    <div class="text-gray-400 text-sm">2025</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col justify-center flex-grow items-start px-10 md:px-32 space-y-6">
+    <h2 class="text-3xl md:text-5xl font-semibold text-gray-200 tracking-wider">Welcome to</h2>
+    <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight">
+      SkillStack<span class="text-indigo-500">!</span>
+    </h1>
+    <p class="max-w-2xl text-gray-400 text-lg">
+      Knowledge grows when shared, and opportunities expand when refined  <br>
+      share your notes, sharpen your resume, and shape your future.
+    </p>
+    <a href="/login">
+      <button class="mt-6 border border-gray-400 text-gray-200 px-6 py-2 rounded-full hover:bg-gray-200 hover:text-black transition">
+        Get Started
+      </button>
+    </a>
+  </section>
+
+</body>
+</html>
