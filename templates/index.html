@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide the default file input but keep it accessible */
+        .hidden-file-input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-slate-900 to-cyan-900 text-white">
+
+    <div class="text-center space-y-8">
+        <h1 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+            AI Resume Analyzer
+        </h1>
+        <p class="text-gray-300">Upload your PDF resume and get instant AI feedback</p>
+
+        <div class="bg-slate-800/60 border border-slate-700 backdrop-blur-md rounded-2xl shadow-2xl p-10 w-[380px] mx-auto transition hover:shadow-cyan-500/20">
+            {% if error %}
+                <p class="text-red-400 mb-4">{{ error }}</p>
+            {% endif %}
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-6">
+                
+                <input 
+                    type="file" 
+                    name="file" 
+                    id="file-upload" 
+                    accept="application/pdf" 
+                    class="hidden-file-input" 
+                    onchange="document.getElementById('file-name').textContent = this.files[0].name"
+                />
+
+                <label 
+                    for="file-upload" 
+                    class="
+                        cursor-pointer 
+                        bg-slate-700 
+                        hover:bg-slate-600 
+                        text-cyan-300 
+                        font-medium 
+                        px-4 py-2 
+                        rounded-lg 
+                        border border-cyan-500/50 
+                        shadow-md shadow-cyan-500/20 
+                        transition 
+                        duration-300
+                    "
+                >
+                    📂 Choose PDF Resume
+                </label>
+
+                <p id="file-name" class="text-sm text-gray-400 mt-2">No file chosen</p>
+
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Upload Resume
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
