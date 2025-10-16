@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 h-screen p-6 flex flex-col space-y-4 shadow-lg">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-400">Notes</h1>
+    <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
+      <a href="/upload">Upload Notes</a>
+    </button>
+    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg transition">
+      <a href="/notes">View Notes</a>
+    </button>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col items-center justify-center px-6">
+    <div class="bg-gray-800 rounded-2xl p-8 w-full max-w-md shadow-lg border border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-center text-blue-400">Upload a New Note</h2>
+
+      <form action="/upload" method="POST" enctype="multipart/form-data" class="flex flex-col space-y-4">
+        <label for="noteFile" class="text-sm font-medium text-gray-300">Choose a file:</label>
+        <input
+          type="file"
+          name="noteFile"
+          id="noteFile"
+          accept=".pdf,.doc,.docx,.txt"
+          required
+          class="file:bg-blue-600 file:hover:bg-blue-700 file:text-white file:py-2 file:px-4 file:rounded file:border-none bg-gray-700 text-gray-200 rounded-md p-2 cursor-pointer"
+        >
+
+        <input
+          type="submit"
+          value="Upload Note"
+          class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium cursor-pointer transition"
+        >
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
