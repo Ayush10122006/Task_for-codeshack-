@@ -1,0 +1,25 @@
+{
+  "name": "task_for-codeshack--3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayush10122006/Task_for-codeshack-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayush10122006/Task_for-codeshack-/issues"
+  },
+  "homepage": "https://github.com/Ayush10122006/Task_for-codeshack-#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
