@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Analysis Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-900 via-slate-900 to-cyan-900 text-white flex flex-col items-center justify-center p-8 font-sans">
+
+  <div class="w-full max-w-3xl bg-slate-800/60 border border-slate-700 backdrop-blur-md rounded-2xl shadow-2xl p-10 space-y-8">
+
+    <!-- Title -->
+    <div class="text-center space-y-2">
+      <h1 class="text-3xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+        📊 Resume Analysis Result
+      </h1>
+      <p class="text-gray-300 text-sm">Here’s what our AI found in your resume</p>
+    </div>
+
+    <!-- Resume Score -->
+    <div class="text-center bg-slate-700/40 rounded-xl p-4 border border-slate-600 shadow-inner">
+      <h3 class="text-2xl font-bold text-purple-400">⭐ Resume Score: <span class="text-white">{{ score }}/10</span></h3>
+      <p class="text-gray-400 text-sm mt-1">Based on detected skills, education, and experience quality</p>
+    </div>
+
+    <!-- Basic Info -->
+    <div class="bg-slate-700/40 rounded-xl p-5 border border-slate-600 shadow-inner">
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">👤 Candidate Information</h2>
+      <p class="text-gray-200"><strong>Name:</strong> {{ name }}</p>
+      <p class="text-gray-200"><strong>Email:</strong> {{ email }}</p>
+      <p class="text-gray-200"><strong>Phone:</strong> {{ phone }}</p>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="bg-slate-700/40 rounded-xl p-5 border border-slate-600 shadow-inner">
+      <h2 class="text-xl font-semibold text-cyan-400 mb-3">🧠 Skills Extracted</h2>
+      {% if skills %}
+        <ul class="list-disc list-inside space-y-1 text-gray-200">
+          {% for skill in skills %}
+            <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-gray-400 italic">No skills detected in the document.</p>
+      {% endif %}
+    </div>
+
+    <!-- Education Section -->
+    <div class="bg-slate-700/40 rounded-xl p-5 border border-slate-600 shadow-inner">
+      <h2 class="text-xl font-semibold text-cyan-400 mb-3">🎓 Education</h2>
+      {% if education %}
+        <ul class="list-disc list-inside space-y-1 text-gray-200">
+          {% for edu in education %}
+            <li>{{ edu }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-gray-400 italic">No education details found.</p>
+      {% endif %}
+    </div>
+
+    <!-- Experience Section -->
+    <div class="bg-slate-700/40 rounded-xl p-5 border border-slate-600 shadow-inner">
+      <h2 class="text-xl font-semibold text-cyan-400 mb-3">💼 Experience</h2>
+      {% if experience %}
+        <ul class="list-disc list-inside space-y-1 text-gray-200">
+          {% for exp in experience %}
+            <li>{{ exp }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-gray-400 italic">No experience data detected.</p>
+      {% endif %}
+    </div>
+
+    <!-- Action Button -->
+    <div class="text-center mt-6">
+      <a href="/" 
+         class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg font-medium transition transform hover:scale-105 shadow-lg">
+         🔄 Analyze Another Resume
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

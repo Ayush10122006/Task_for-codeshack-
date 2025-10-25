@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Notes</h1>
-    
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 min-h-screen text-white flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 h-screen p-6 shadow-lg flex flex-col gap-4 fixed left-0 top-0">
+    <h2 class="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">Menu</h2>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors">
+      <a href="/notes_upload">Upload Notes</a>
+    </button>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors">
+      <a href="/notes">View Notes</a>
+    </button>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex-1 ml-64">
+    <!-- Header -->
+    <header class="bg-gray-900 px-8 py-5 shadow-md sticky top-0">
+      <h1 class="text-3xl font-bold">Notes</h1>
+    </header>
+
+    <!-- Notes Section -->
+    <main class="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-2xl hover:scale-[1.02] transform transition-all duration-300">
+        <h2 class="text-xl font-semibold mb-2">Note Title 1</h2>
+        <p class="text-gray-300 mb-4">This is a brief description of Note 1.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium">Read More →</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-2xl hover:scale-[1.02] transform transition-all duration-300">
+        <h2 class="text-xl font-semibold mb-2">Note Title 2</h2>
+        <p class="text-gray-300 mb-4">This is a brief description of Note 2.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium">Read More →</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-2xl hover:scale-[1.02] transform transition-all duration-300">
+        <h2 class="text-xl font-semibold mb-2">Note Title 3</h2>
+        <p class="text-gray-300 mb-4">This is a brief description of Note 3.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium">Read More →</a>
+      </div>
+    </main>
+  </div>
+
 </body>
 </html>
